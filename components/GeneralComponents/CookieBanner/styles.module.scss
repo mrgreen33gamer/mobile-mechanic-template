@@ -259,3 +259,51 @@
     justify-content: center;
   }
 }
+
+/* === COOKIE UNIQUENESS — mobile-mechanic-template === */
+.backdrop {
+  bottom: 2rem !important;
+  right: 2rem !important;
+  left: auto !important;
+  top: auto !important;
+  max-width: 340px !important;
+  transform: none;
+}
+
+.card {
+  background: rgba($obsidian, 0.96) !important;
+  border: 1px solid rgba($white, 0.06) !important;
+  border-radius: 24px !important;
+  padding: 1.35rem !important;
+  
+  
+  &::before {
+    content: '';
+    position: absolute;
+    inset: 0;
+    background:
+      radial-gradient(circle at 100% 0%, rgba($orange, 0.1), transparent 45%),
+      radial-gradient(circle at 0% 100%, rgba($white, 0.04), transparent 40%);
+    pointer-events: none;
+  }
+}
+
+.iconWrap {
+  border-radius: 8px !important;
+  background: rgba($orange, 0.14) !important;
+  border-color: rgba($orange, 0.28) !important;
+  color: $orange !important;
+}
+
+.btnAccept {
+  background: $green !important;
+  color: $obsidian !important;
+  border-radius: 8px !important;
+  &:hover { filter: brightness(1.08); }
+}
+
+.btnDecline,
+.btnEssential {
+  border-radius: 8px !important;
+}
+/* end cookie uniqueness */

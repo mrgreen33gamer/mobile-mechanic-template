@@ -389,3 +389,93 @@
 }
 
 /* end identity layer */
+
+/* === HERO PATTERN UNIQUENESS — mobile-mechanic-template === */
+.hero {
+  &::before {
+    content: '' !important;
+    position: absolute !important;
+    inset: 0 !important;
+    background-image: radial-gradient(circle, rgba($white, 0.045) 1px, transparent 1.2px) !important;
+    background-size: 18px 18px !important;
+    opacity: 0.70 !important;
+    pointer-events: none !important;
+    z-index: 0 !important;
+  }
+
+  &::after {
+    content: '' !important;
+    position: absolute !important;
+    inset: 0 !important;
+    background-image: radial-gradient(ellipse 50% 40% at 45% 24%, rgba($orange, 0.049), transparent 70%), radial-gradient(ellipse 40% 50% at 79% 57%, rgba($white, 0.03), transparent 65%) !important;
+    pointer-events: none !important;
+    z-index: 0 !important;
+  }
+}
+/* end hero pattern */
+
+/* === MAP VISUAL LANGUAGE — highway / van route / ETA === */
+.highwayMap {
+  border-color: rgba(249, 115, 22, 0.32) !important;
+  background:
+    linear-gradient(90deg, rgba(255, 255, 255, 0.02) 0%, transparent 40%, transparent 60%, rgba(255, 255, 255, 0.02) 100%),
+    radial-gradient(ellipse 60% 50% at 45% 50%, rgba(249, 115, 22, 0.07), transparent 70%),
+    $obsidian !important;
+}
+
+.routeRings {
+  .ring {
+    border-color: rgba(249, 115, 22, 0.42) !important;
+  }
+  .ring2 {
+    border-color: rgba(249, 115, 22, 0.22) !important;
+  }
+}
+
+.vanHub {
+  background: linear-gradient(145deg, $lightorange, $orange) !important;
+  border-radius: 8px !important;
+  transform: rotate(0deg) !important;
+
+  svg {
+    transform: none !important;
+  }
+}
+
+.routeLine {
+  filter: drop-shadow(0 0 4px rgba(249, 115, 22, 0.55));
+}
+
+.shieldGroup {
+  /* highway shield group wrapper — SVG text inherits map palette */
+}
+
+.etaBadge {
+  position: absolute;
+  top: 0.85rem;
+  right: 0.85rem;
+  z-index: 5;
+  display: inline-flex;
+  align-items: center;
+  gap: 0.4rem;
+  font-family: $textFont;
+  font-size: 0.68rem;
+  font-weight: 800;
+  letter-spacing: 0.06em;
+  text-transform: uppercase;
+  color: $obsidian;
+  background: $orange;
+  padding: 0.35rem 0.7rem;
+  border-radius: 6px;
+  box-shadow: 0 4px 16px rgba(249, 115, 22, 0.4);
+}
+
+.etaLive {
+  width: 7px;
+  height: 7px;
+  border-radius: 50%;
+  background: $obsidian;
+  animation: pulse 1.6s ease-in-out infinite;
+  flex-shrink: 0;
+}
+
