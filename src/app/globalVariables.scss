@@ -1,44 +1,30 @@
-// src/app/globalVariables.scss
-// ─────────────────────────────────────────────────────────────────────────────
-// BayCall Mobile Mechanics — Brand Tokens
-//
-// THREE DISTINCT FONTS:
-//   $titleFont  → Barlow Condensed  — bold condensed display (hero h1, section titles)
-//   $headerFont → Outfit            — clean geometric sans   (nav, card titles, labels, CTAs)
-//   $textFont   → Inter             — refined humanist sans  (body copy, form text, paragraphs)
-//
-// Usage guide:
-//   h1, .hero headline              → $titleFont  (uppercase, tight tracking)
-//   h2, h3, nav links, btn text     → $headerFont (medium weight, normal case)
-//   p, label, input, small text     → $textFont   (regular/medium weight)
-// ─────────────────────────────────────────────────────────────────────────────
+// Auto uniqueness tokens — roadside mobile tech
+$titleFont:  var(--font-title),  'Bangers', sans-serif;
+$headerFont: var(--font-header), 'Oswald', sans-serif;
+$textFont:   var(--font-body),   'Source Sans 3', sans-serif;
 
-$titleFont:  var(--font-barlow-condensed), 'Barlow Condensed', sans-serif;
-$headerFont: var(--font-outfit),           'Outfit',           sans-serif;
-$textFont:   var(--font-inter),            'Inter',            sans-serif;
-
-// ── Core Palette ─────────────────────────────────────────────────────────────
 $black:      #000000;
-$obsidian:   #0d1b2a;
-$blackflat:  #1a2a3a;
+$obsidian:   #171717;
+$blackflat:  #171717;
 $white:      #FFFFFF;
-$offwhite:   #f8fafc;
+$offwhite:   #fff7ed;
 
-// Greys (navy-tinted)
-$darkgrey:   #7a9bb5;
-$grey:       #4a6a85;
-$lightgrey:  #c8d8e8;
+$darkgrey:   #94a3b8;
+$grey:       #64748b;
+$lightgrey:  #e2e8f0;
 
-// Brand Accent — orange primary + rust brown dark
-$orange:     #ea580c;
+$orange:     #f97316;
 $lightorange:#fb923c;
-$darkorange: #7c2d12;
+$darkorange: #c2410c;
 
-// Legacy aliases
 $green:      $orange;
 $lightgreen: $lightorange;
 $darkgreen:  $darkorange;
-$blue:       #1e6fa8;
+$blue:       #f97316;
 
-// Error
+$radius-sm:  4px;
+$radius-md:  8px;
+$radius-lg:  12px;
+$radius-pill: 4px;
+
 $danger-red: #ef4444;

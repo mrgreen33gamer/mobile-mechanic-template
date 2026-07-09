@@ -35,36 +35,42 @@ export default function HomePage() {
       title: "Mobile Diagnostics",
       body: "Check-engine lights, no-start issues, and drivability problems diagnosed at your driveway. We bring OBD tools and plain-English answers — not a tow-bill surprise.",
       link: "/services/mobile-diagnostics",
+      image: "/pages/home/services/service-1.jpg",
     },
     {
       icon: faCogs,
       title: "Brake Service",
       body: "Pads, rotors, calipers, and brake fluid service where you park. Safe stopping power with fair upfront quotes and a 12-month parts warranty on common jobs.",
       link: "/services/brake-service",
+      image: "/pages/home/services/service-2.jpg",
     },
     {
       icon: faCarBattery,
       title: "Battery & Alternator",
       body: "Load testing, battery replacement, and alternator diagnosis on-site. We stock common batteries and charge systems so you're not stranded waiting on a parts run.",
       link: "/services/battery-alternator",
+      image: "/pages/home/services/service-3.jpg",
     },
     {
       icon: faOilCan,
       title: "Mobile Oil Change",
       body: "Conventional and synthetic oil changes at home or work. Filter, fluids, and a multi-point glance so small issues don't become roadside emergencies.",
       link: "/services/oil-change-mobile",
+      image: "/pages/home/services/service-4.jpg",
     },
     {
       icon: faWrench,
       title: "Starter Repair",
       body: "Click-no-crank, slow starts, and starter replacement without a tow. ASE-certified techs diagnose electrical and mechanical no-start causes correctly the first time.",
       link: "/services/starter-repair",
+      image: "/pages/home/services/service-1.jpg",
     },
     {
       icon: faClipboardCheck,
       title: "Pre-Purchase Inspection",
       body: "Buying a used car in Central Texas? We inspect engines, brakes, leaks, and electronics at the seller's location so you know what you're signing up for.",
       link: "/services/pre-purchase-inspection",
+      image: "/pages/home/services/service-2.jpg",
     },
   ];
 
@@ -180,13 +186,10 @@ export default function HomePage() {
 
   return (
     <main className={styles.pageWrapper}>
-
       <WelcomePage />
-
       <TrustBar
         headline="Waco's trusted mobile mechanics — ASE-certified, insured, and warrantied on common jobs"
       />
-
       <div className={styles.section}>
         <ImpactMetrics
           title="Numbers That Speak for Us"
@@ -194,14 +197,21 @@ export default function HomePage() {
           cityName="Waco"
         />
       </div>
-
       <div className={styles.section}>
         <ServiceCardComponent
           heading="Complete Mobile Mechanic Services — At Your Location"
           cards={services}
         />
       </div>
-
+      <CTABanner
+        headline="The Shop Comes to You."
+        subline="Mobile diagnostics, batteries, brakes, and maintenance in your driveway — real techs, real parts."
+        primaryText="Call (254) 940-1515"
+        primaryLink="tel:+12549401515"
+        secondaryText="Book Mobile Tech"
+        secondaryLink="/contact"
+        imageSrc="/pages/home/welcome/hero-main.jpg"
+      />
       <div className={styles.section}>
         <WhyChooseUs
           cityName="Waco"
@@ -209,7 +219,39 @@ export default function HomePage() {
           title="What Makes BayCall Mobile Mechanics Different"
         />
       </div>
-
+      <div className={styles.section}>
+        <ProcessTimeline steps={processSteps} />
+      </div>
+      <div className={styles.section}>
+        <Testimonials testimonials={reviews} />
+      </div>
+      <div className={styles.section}>
+        <GuaranteeSection />
+      </div>
+      <div className={styles.section}>
+        <LocalServiceAreas
+          cityName="Waco"
+          areas={localAreas}
+          servicePath=""
+          title="Serving All of Central Texas"
+        />
+      </div>
+      <div className={styles.section}>
+        <WhatToExpect
+          sectionTitle="Every Service Call, Every Time"
+          expectations={expectations}
+        />
+      </div>
+      <div className={styles.section}>
+        <FAQ
+          cityName="Waco"
+          faq={faq}
+          title="Mobile Mechanic Questions — Answered Straight"
+        />
+      </div>
+      <div className={styles.section}>
+        <BlogPreviewGrid />
+      </div>
       <div className={styles.section}>
         <Variant4
           title="Request Service or a Free Quote"
@@ -219,56 +261,6 @@ export default function HomePage() {
           formVariant={2}
         />
       </div>
-
-      <div className={styles.section}>
-        <ProcessTimeline steps={processSteps} />
-      </div>
-
-      <div className={styles.section}>
-        <Testimonials testimonials={reviews} />
-      </div>
-
-      <div className={styles.section}>
-        <GuaranteeSection />
-      </div>
-
-      <CTABanner
-        headline="Car Won't Start? Check Engine Light? We Come to You."
-        subline="Same-day mobile appointments across Waco, Hewitt, Woodway, Temple, and all of Central Texas. Fair upfront quotes. 12-month parts warranty on common jobs."
-        primaryText="Call (254) 940-1515"
-        primaryLink="tel:+12549401515"
-        secondaryText="Book Online"
-        secondaryLink="/contact"
-      />
-
-      <div className={styles.section}>
-        <LocalServiceAreas
-          cityName="Waco"
-          areas={localAreas}
-          servicePath=""
-          title="Serving All of Central Texas"
-        />
-      </div>
-
-      <div className={styles.section}>
-        <WhatToExpect
-          sectionTitle="Every Service Call, Every Time"
-          expectations={expectations}
-        />
-      </div>
-
-      <div className={styles.section}>
-        <FAQ
-          cityName="Waco"
-          faq={faq}
-          title="Mobile Mechanic Questions — Answered Straight"
-        />
-      </div>
-
-      <div className={styles.section}>
-        <BlogPreviewGrid />
-      </div>
-
     </main>
   );
 }
