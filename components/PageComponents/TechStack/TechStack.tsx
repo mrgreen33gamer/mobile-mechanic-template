@@ -5,7 +5,7 @@ import styles from './styles.module.scss';
 interface BrandItem {
   name:     string;
   type:     string; // 'brand' | 'cert' | 'tool'
-  icon?:    string; // emoji or short abbreviation for display
+  icon?:    string;
 }
 
 interface BrandGroup {
@@ -21,43 +21,43 @@ interface TechStackProps {
 
 const DEFAULT_GROUPS: BrandGroup[] = [
   {
-    label: 'Equipment Brands We Service',
+    label: 'Parts & Systems We Service',
     items: [
-      { name: 'Carrier',     type: 'brand', icon: '❄️' },
-      { name: 'Trane',       type: 'brand', icon: '❄️' },
-      { name: 'Lennox',      type: 'brand', icon: '❄️' },
-      { name: 'Rheem',       type: 'brand', icon: '❄️' },
-      { name: 'Goodman',     type: 'brand', icon: '❄️' },
-      { name: 'York',        type: 'brand', icon: '❄️' },
-      { name: 'Daikin',      type: 'brand', icon: '❄️' },
-      { name: 'American Standard', type: 'brand', icon: '❄️' },
+      { name: 'OEM & Quality Aftermarket', type: 'brand' },
+      { name: 'Brake Pads & Rotors',       type: 'brand' },
+      { name: 'Batteries',                 type: 'brand' },
+      { name: 'Alternators',               type: 'brand' },
+      { name: 'Starters',                  type: 'brand' },
+      { name: 'Oil & Filters',             type: 'brand' },
+      { name: 'Sensors & Ignition',        type: 'brand' },
+      { name: 'OBD Diagnostics',           type: 'brand' },
     ],
   },
   {
-    label: 'Certifications & Licenses',
+    label: 'Certifications & Coverage',
     items: [
-      { name: 'NATE Certified',      type: 'cert', icon: '✓' },
-      { name: 'TDLR Licensed',       type: 'cert', icon: '✓' },
-      { name: 'EPA 608 Certified',   type: 'cert', icon: '✓' },
-      { name: 'Fully Insured',       type: 'cert', icon: '✓' },
+      { name: 'ASE-Certified Techs',       type: 'cert' },
+      { name: 'Bonded & Insured',          type: 'cert' },
+      { name: '12-Month Parts Warranty',   type: 'cert' },
+      { name: 'Fair Upfront Quotes',       type: 'cert' },
     ],
   },
   {
-    label: 'System Types',
+    label: 'Service Types',
     items: [
-      { name: 'Central AC',          type: 'tool', icon: '🌡️' },
-      { name: 'Heat Pumps',          type: 'tool', icon: '🌡️' },
-      { name: 'Mini-Splits',         type: 'tool', icon: '🌡️' },
-      { name: 'Gas Furnaces',        type: 'tool', icon: '🌡️' },
-      { name: 'Duct Systems',        type: 'tool', icon: '🌡️' },
-      { name: 'Air Handlers',        type: 'tool', icon: '🌡️' },
+      { name: 'Mobile Diagnostics',        type: 'tool' },
+      { name: 'Brake Service',             type: 'tool' },
+      { name: 'Battery & Alternator',      type: 'tool' },
+      { name: 'Mobile Oil Change',         type: 'tool' },
+      { name: 'Starter Repair',            type: 'tool' },
+      { name: 'Pre-Purchase Inspection',   type: 'tool' },
     ],
   },
 ];
 
 const TechStack: React.FC<TechStackProps> = ({
-  title    = 'All Brands, All Systems',
-  subtitle = 'We service every major brand and system type — no brand-specific limitations, no excuses.',
+  title    = 'Quality Parts, Certified Techs',
+  subtitle = 'We diagnose and repair with quality parts and ASE-certified technicians — fair quotes, no driveway shortcuts.',
   groups   = DEFAULT_GROUPS,
 }) => {
   return (

@@ -11,7 +11,7 @@ import ReCAPTCHA from 'react-google-recaptcha';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import {
   faCircleCheck, faExclamationTriangle, faArrowRight, faArrowLeft,
-  faFan, faFire, faWrench, faFilter, faThermometerHalf, faWind, faBolt,
+  faWrench, faLink, faDoorOpen, faCogs, faClipboardList, faBuilding, faBolt,
 } from '@fortawesome/free-solid-svg-icons';
 import { motion, AnimatePresence } from 'framer-motion';
 import { getJourneyContext } from '&/useJourneyTracker';
@@ -22,13 +22,13 @@ interface Variant4Props {
 }
 
 const SERVICES = [
-  { icon: faFan,             label: 'AC Repair',        sub: 'System not cooling, strange noises' },
-  { icon: faFire,            label: 'Heating / Furnace', sub: 'Heat not working, furnace issues' },
-  { icon: faWrench,          label: 'New Installation',  sub: 'Replace or add a new system' },
-  { icon: faFilter,          label: 'Duct Cleaning',     sub: 'Improve airflow & air quality' },
-  { icon: faThermometerHalf, label: 'Maintenance',       sub: 'Tune-up, inspection, seasonal' },
-  { icon: faWind,            label: 'Air Quality',       sub: 'Filters, purifiers, humidity' },
-  { icon: faBolt,            label: 'Emergency',         sub: 'System down, urgent repair needed' },
+  { icon: faWrench,        label: 'Mobile Diagnostics',  sub: 'Off-track, rollers, noisy door' },
+  { icon: faLink,          label: 'Brake Service',      sub: 'Broken spring or cable repair' },
+  { icon: faDoorOpen,      label: 'Battery & Alternator',    sub: 'Replace or add a new door' },
+  { icon: faCogs,          label: 'Mobile Oil Change',      sub: 'New or replacement opener' },
+  { icon: faClipboardList, label: 'Starter Repair',    sub: 'Tune-up, balance, safety check' },
+  { icon: faBuilding,      label: 'Pre-Purchase Inspection',    sub: 'Rolling steel & high-cycle' },
+  { icon: faBolt,          label: 'Emergency',           sub: 'Door stuck, urgent repair needed' },
 ];
 
 const BUDGET_LABELS = ['Under $500', '$500–$1,500', '$1,500–$5,000', '$5,000–$10,000', '$10,000+'];
@@ -143,7 +143,7 @@ export default function Variant4({ title, cityName, slug, spot, formVariant }: V
                   </div>
                   <h3 className={styles.successTitle}>You're All Set!</h3>
                   <p className={styles.successText}>
-                    A licensed Arctic Air tech will reach out about your <strong>{selectedService}</strong> service.
+                    A licensed BayCall Mobile Mechanics tech will reach out about your <strong>{selectedService}</strong> service.
                   </p>
                   <div className={styles.successSummary}>
                     <div className={styles.summaryRow}><span>Service</span><span>{selectedService}</span></div>

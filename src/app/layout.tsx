@@ -1,5 +1,5 @@
 // src/app/layout.tsx
-// Arctic Air HVAC — root layout
+// BayCall Mobile Mechanics — root layout
 //
 // MOBILE / SAFE-AREA FIX:
 //   Added a Next.js 14+ `viewport` export with:
@@ -60,7 +60,7 @@ const aBeeZee = ABeeZee({
 
 const isProduction = process.env.NODE_ENV === "production";
 const BASE_URL = isProduction
-  ? "https://www.arcticairhvac.com"
+  ? "https://www.baycallmobile.com"
   : "http://localhost:3000";
 
 // ── VIEWPORT ──────────────────────────────────────────────────────────────────
@@ -85,42 +85,42 @@ export const viewport: Viewport = {
 export const metadata: Metadata = {
   metadataBase: new URL(BASE_URL),
   title: {
-    default: "Arctic Air HVAC | AC Repair, Heating & Installation — Waco, TX",
-    template: "%s | Arctic Air HVAC",
+    default: "BayCall Mobile Mechanics | Mobile Diagnostics, Brakes & Batteries — Waco, TX",
+    template: "%s | BayCall Mobile Mechanics",
   },
   description:
-    "Arctic Air HVAC is a Waco, TX heating and cooling company offering AC repair, furnace service, new system installation, duct cleaning, and maintenance plans for Central Texas homes and businesses. Licensed, local, no contracts.",
+    "BayCall Mobile Mechanics is a Waco, TX mobile mechanic company offering mobile diagnostics, brake service, battery & alternator, oil changes, starter repair, and pre-purchase inspections for Central Texas drivers. ASE-certified, bonded & insured.",
   keywords: [
-    "Arctic Air HVAC",
-    "HVAC company Waco TX",
-    "AC repair Waco Texas",
-    "air conditioning installation Waco",
-    "furnace repair Central Texas",
-    "heating and cooling Waco TX",
-    "HVAC contractor Hewitt TX",
-    "duct cleaning Waco",
-    "emergency AC repair Waco",
+    "BayCall Mobile Mechanics",
+    "mobile mechanic Waco TX",
+    "mobile diagnostics Waco Texas",
+    "mobile brake service Waco",
+    "battery replacement Central Texas",
+    "mobile oil change Waco TX",
+    "mobile mechanic Hewitt TX",
+    "car won't start Waco",
+    "ASE mobile mechanic Waco",
   ],
-  authors: [{ name: "Arctic Air HVAC", url: BASE_URL }],
-  creator: "Arctic Air HVAC",
-  publisher: "Arctic Air HVAC",
+  authors: [{ name: "BayCall Mobile Mechanics", url: BASE_URL }],
+  creator: "BayCall Mobile Mechanics",
+  publisher: "BayCall Mobile Mechanics",
   icons: {
     icon: [`${BASE_URL}/logos/favicon.ico?v=1`],
     apple: [`${BASE_URL}/logos/apple-touch-icon.png?v=1`],
     shortcut: [`${BASE_URL}/logos/apple-touch-icon.png?v=1`],
   },
   openGraph: {
-    title: "Arctic Air HVAC | AC Repair, Heating & Installation — Waco, TX",
+    title: "BayCall Mobile Mechanics | Mobile Diagnostics, Brakes & Batteries — Waco, TX",
     description:
-      "Waco-based HVAC company for AC repair, furnace service, new installations, and maintenance plans across Central Texas. Licensed & insured. No contracts.",
+      "Waco-based mobile mechanics for diagnostics, brakes, batteries, oil changes, starters, and pre-purchase inspections across Central Texas. ASE-certified & insured. We come to you.",
     url: BASE_URL,
-    siteName: "Arctic Air HVAC",
+    siteName: "BayCall Mobile Mechanics",
     images: [
       {
-        url: `${BASE_URL}/logos/arctic-air-banner.png?v=1`,
+        url: `${BASE_URL}/logos/scott-apps-banner.png?v=1`,
         width: 1200,
         height: 630,
-        alt: "Arctic Air HVAC — Waco TX Air Conditioning & Heating",
+        alt: "BayCall Mobile Mechanics — Waco TX Mobile Mechanic Service",
       },
     ],
     locale: "en_US",
@@ -128,10 +128,10 @@ export const metadata: Metadata = {
   },
   twitter: {
     card: "summary_large_image",
-    title: "Arctic Air HVAC | Waco TX Heating & Cooling",
+    title: "BayCall Mobile Mechanics | Waco TX Mobile Mechanics",
     description:
-      "AC repair, heating service, new installations & maintenance plans for Central Texas. Licensed & insured — no contracts.",
-    images: [`${BASE_URL}/logos/arctic-air-banner.png?v=1`],
+      "Mobile diagnostics, brakes, batteries, oil changes & more for Central Texas. ASE-certified & insured — we come to you.",
+    images: [`${BASE_URL}/logos/scott-apps-banner.png?v=1`],
   },
   robots: {
     index: true,
@@ -155,24 +155,24 @@ const ratingValue = "5.0";
 
 const localBusinessSchema = {
   "@context": "https://schema.org",
-  "@type": "HVACBusiness",
+  "@type": "AutomotiveBusiness",
   "@id": `${BASE_URL}/#organization`,
-  name: "Arctic Air HVAC",
-  alternateName: "Arctic Air Heating & Cooling",
+  name: "BayCall Mobile Mechanics",
+  alternateName: "BayCall Mobile Mechanics Waco",
   description:
-    "Residential and commercial HVAC services in Waco and Central Texas — AC repair, heating, new installations, duct cleaning, and maintenance plans. Licensed, insured, no contracts.",
+    "Mobile mechanic services in Waco and Central Texas — mobile diagnostics, brake service, battery & alternator, oil changes, starter repair, and pre-purchase inspections. ASE-certified technicians, bonded & insured, fair upfront quotes and 12-month parts warranty on common jobs.",
   url: BASE_URL,
-  telephone: "+12549001234",
-  email: "contact@arcticairhvac.com",
-  foundingDate: "2010",
+  telephone: "+12549401515",
+  email: "hello@baycallmobile.com",
+  foundingDate: "2013",
   founder: {
     "@type": "Person",
-    name: "Mike Hawkins",
-    jobTitle: "Owner & Master HVAC Technician",
+    name: "Omar Singh",
+    jobTitle: "Owner & Lead Mobile Mechanic",
   },
   address: {
     "@type": "PostalAddress",
-    streetAddress: "4521 Bosque Blvd",
+    streetAddress: "1400 N Valley Mills Dr",
     addressLocality: "Waco",
     addressRegion: "TX",
     postalCode: "76710",
@@ -201,24 +201,22 @@ const localBusinessSchema = {
     { "@type": "City", name: "Waco",        containedInPlace: { "@type": "State", name: "Texas" } },
     { "@type": "City", name: "Hewitt",       containedInPlace: { "@type": "State", name: "Texas" } },
     { "@type": "City", name: "Woodway",      containedInPlace: { "@type": "State", name: "Texas" } },
-    { "@type": "City", name: "Robinson",     containedInPlace: { "@type": "State", name: "Texas" } },
+    { "@type": "City", name: "Bellmead",     containedInPlace: { "@type": "State", name: "Texas" } },
     { "@type": "City", name: "China Spring", containedInPlace: { "@type": "State", name: "Texas" } },
-    { "@type": "City", name: "Hillsboro",    containedInPlace: { "@type": "State", name: "Texas" } },
+    { "@type": "City", name: "McGregor",     containedInPlace: { "@type": "State", name: "Texas" } },
     { "@type": "City", name: "Temple",       containedInPlace: { "@type": "State", name: "Texas" } },
     { "@type": "City", name: "Killeen",      containedInPlace: { "@type": "State", name: "Texas" } },
   ],
   hasOfferCatalog: {
     "@type": "OfferCatalog",
-    name: "HVAC Services",
+    name: "Mobile Mechanic Services",
     itemListElement: [
-      { "@type": "Offer", itemOffered: { "@type": "Service", name: "AC Repair" } },
-      { "@type": "Offer", itemOffered: { "@type": "Service", name: "AC Installation" } },
-      { "@type": "Offer", itemOffered: { "@type": "Service", name: "Heating Repair" } },
-      { "@type": "Offer", itemOffered: { "@type": "Service", name: "Furnace Installation" } },
-      { "@type": "Offer", itemOffered: { "@type": "Service", name: "Duct Cleaning" } },
-      { "@type": "Offer", itemOffered: { "@type": "Service", name: "HVAC Maintenance Plans" } },
-      { "@type": "Offer", itemOffered: { "@type": "Service", name: "Indoor Air Quality" } },
-      { "@type": "Offer", itemOffered: { "@type": "Service", name: "Smart Thermostat Installation" } },
+      { "@type": "Offer", itemOffered: { "@type": "Service", name: "Mobile Diagnostics" } },
+      { "@type": "Offer", itemOffered: { "@type": "Service", name: "Brake Service" } },
+      { "@type": "Offer", itemOffered: { "@type": "Service", name: "Battery & Alternator" } },
+      { "@type": "Offer", itemOffered: { "@type": "Service", name: "Mobile Oil Change" } },
+      { "@type": "Offer", itemOffered: { "@type": "Service", name: "Starter Repair" } },
+      { "@type": "Offer", itemOffered: { "@type": "Service", name: "Pre-Purchase Inspection" } },
     ],
   },
   aggregateRating: {
@@ -232,7 +230,7 @@ const localBusinessSchema = {
   currenciesAccepted: "USD",
   paymentAccepted: "Cash, Credit Card, Check, Financing",
   sameAs: [
-    "https://www.facebook.com/arcticairhvac",
+    "https://www.facebook.com/baycallmobile",
     "https://www.google.com/maps/?cid=placeholder",
   ],
 };
@@ -259,7 +257,7 @@ export default function RootLayout({
           <Header />
         </ConditionalShell>
 
-        <NextTopLoader color="#f97316" showSpinner={false} />
+        <NextTopLoader color="#ea580c" showSpinner={false} />
 
         <Suspense fallback={null}>
           <Analytics />
@@ -275,10 +273,10 @@ export default function RootLayout({
                   alignItems: "center",
                   width: "100%",
                   height: "100vh",
-                  background: "#0a130a",
+                  background: "#0d1b2a",
                 }}
               >
-                <PulseLoader size={50} color="#f97316" />
+                <PulseLoader size={50} color="#ea580c" />
               </div>
             }
           >

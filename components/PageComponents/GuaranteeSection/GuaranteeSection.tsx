@@ -31,15 +31,15 @@ interface GuaranteeSectionProps {
 const DEFAULT_GUARANTEES: Guarantee[] = [
   {
     icon: faTag,
-    title: "Flat-Rate Pricing. Always.",
+    title: "Fair Upfront Quotes. Always.",
     description:
-      "You get a firm price before we start — no hourly billing, no surprise add-ons. What we quote is what you pay.",
+      "You get a clear price before we start — no mystery hourly billing, no surprise add-ons. What we quote is what you pay.",
   },
   {
     icon: faShieldHalved,
-    title: "1-Year Parts & Labor Warranty",
+    title: "12-Month Parts Warranty on Common Jobs",
     description:
-      "Every repair we perform is covered for a full year — parts and labor. If it fails within 12 months, we fix it at no charge.",
+      "Common repairs are backed by a 12-month parts warranty. If a covered part fails within the warranty window, we make it right.",
   },
   {
     icon: faRotateLeft,
@@ -49,15 +49,15 @@ const DEFAULT_GUARANTEES: Guarantee[] = [
   },
   {
     icon: faCertificate,
-    title: "NATE-Certified Technicians",
+    title: "ASE-Certified Techs",
     description:
-      "Every tech who enters your home is NATE-certified and TDLR-licensed. No apprentices working alone — ever.",
+      "Every BayCall technician is ASE-certified, bonded, and insured. Real mobile mechanics — not random gig freelancers.",
   },
   {
     icon: faCalendarCheck,
     title: "No Contracts. No Lock-In.",
     description:
-      "Our maintenance plans are month-to-month. We earn your business with every visit — not by holding you hostage with a contract.",
+      "We earn your business with every visit — not by holding you hostage with a multi-year service contract.",
   },
   {
     icon: faStar,
@@ -92,7 +92,7 @@ const GuaranteeSection: React.FC<GuaranteeSectionProps> = ({
             ))}
           </h2>
           <p className={styles.body}>
-            Every HVAC company in Central Texas makes promises. We back ours in writing — with flat-rate pricing, certified technicians, and a 1-year warranty on every repair we touch.
+            Every mobile mechanic company in Central Texas makes promises. We back ours in writing — with flat-rate pricing, ASE-certified mobile mechanic technicians, and a Fair Upfront Quotes · 12-Month Parts Warranty on Common Jobs on every install we touch.
           </p>
           <Link
             href={ctaLink}
@@ -117,7 +117,7 @@ const GuaranteeSection: React.FC<GuaranteeSectionProps> = ({
                 </svg>
               ))}
             </div>
-            <span className={styles.ratingText}>4.9 · 300+ verified Google reviews</span>
+            <span className={styles.ratingText}>4.9 · 800+ verified Google reviews</span>
           </div>
         </div>
 
