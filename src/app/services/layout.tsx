@@ -1,58 +1,36 @@
 // src/app/services/layout.tsx
-// ─────────────────────────────────────────────────────────────────────────────
-// ✅ FIX: This file was previously a copy of
-//    /services/website-design/killeen-tx/layout.tsx (KilleenWebDesignLayout).
-//    That caused a metadata collision — Google saw Killeen keyword targeting
-//    on the /services parent route.
-//
-//    This is now the correct /services parent layout with:
-//    - Broad "all services" metadata (no city/keyword cannibalization)
-//    - OfferCatalog schema listing all 4 services
-//    - BreadcrumbList for the /services route
-// ─────────────────────────────────────────────────────────────────────────────
+// BayCall Mobile Mechanics — /services parent layout
 import type { Metadata } from "next";
 
-const BASE_URL = process.env.NEXT_PUBLIC_SITE_URL ?? 'https://hvac-pro-template.vercel.app';
+const BASE_URL = process.env.NEXT_PUBLIC_SITE_URL ?? 'https://www.baycallmobile.com';
 const url = `${BASE_URL}/services`;
 
 export const metadata: Metadata = {
-  title: "Services | Web Design, Software, Branding & Marketing | Scott Applications",
+  title: "Mobile Mechanic Services | Diagnostics, Brakes, Batteries & More | BayCall Mobile Mechanics",
   description:
-    "Scott Applications offers custom web design, software engineering, graphic design, and digital marketing for Central Texas businesses. Fixed pricing, no contracts, you own everything.",
+    "BayCall Mobile Mechanics offers mobile diagnostics, brake service, battery & alternator, oil changes, starter repair, and pre-purchase inspections for Waco and Central Texas. ASE-certified, fair upfront quotes, 12-month parts warranty on common jobs.",
   keywords: [
-    "web design Waco TX",
-    "custom software Central Texas",
-    "graphic design Waco",
-    "digital marketing Waco TX",
-    "Scott Applications services",
-    "digital agency Waco Texas",
-    "website development Central Texas",
-    "local SEO Waco",
+    "mobile mechanic Waco TX",
+    "mobile diagnostics Waco",
+    "mobile brake service Central Texas",
+    "battery replacement Waco TX",
+    "mobile oil change Waco",
+    "ASE mobile mechanic Waco",
   ],
-  alternates: {
-    canonical: url,
-  },
+  alternates: { canonical: url },
   openGraph: {
-    title: "Services | Web Design, Software, Branding & Marketing | Scott Applications",
+    title: "Mobile Mechanic Services | BayCall Mobile Mechanics",
     description:
-      "Custom websites, software, branding, and marketing for Central Texas businesses. Fixed price, no contracts, direct developer access.",
+      "Diagnostics, brakes, batteries, oil changes, starters, and pre-purchase inspections for Waco and Central Texas. ASE-certified — we come to you.",
     url,
-    siteName: "Scott Applications",
+    siteName: "BayCall Mobile Mechanics",
     locale: "en_US",
     type: "website",
-    images: [
-      {
-        url: `${BASE_URL}/logos/scott-apps-banner.png?v=3`,
-        alt: "Scott Applications — Services for Central Texas Businesses",
-      },
-    ],
   },
   twitter: {
     card: "summary_large_image",
-    title: "Services | Scott Applications",
-    description:
-      "Web design, custom software, graphic design, and digital marketing for Central Texas. Fixed pricing, full ownership.",
-    images: [`${BASE_URL}/logos/scott-apps-banner.png?v=3`],
+    title: "Mobile Mechanic Services | BayCall Mobile Mechanics",
+    description: "Diagnostics, brakes, batteries & more for Central Texas. ASE-certified.",
   },
   robots: { index: true, follow: true },
 };
@@ -60,85 +38,30 @@ export const metadata: Metadata = {
 const offerCatalogSchema = {
   "@context": "https://schema.org",
   "@type": "OfferCatalog",
-  name: "Scott Applications — Digital Services",
+  name: "BayCall Mobile Mechanics — Mobile Mechanic Services",
   description:
-    "Full-service digital agency offerings for Central Texas businesses: web design, custom software, graphic design, and digital marketing.",
+    "Mobile mechanic services for Waco and Central Texas: diagnostics, brakes, batteries, oil changes, starters, and pre-purchase inspections.",
   provider: {
-    "@type": "LocalBusiness",
-    name: "Scott Applications",
+    "@type": "AutomotiveBusiness",
+    name: "BayCall Mobile Mechanics",
     url: BASE_URL,
-    telephone: "+12549002520",
-    address: {
-      "@type": "PostalAddress",
-      addressLocality: "Waco",
-      addressRegion: "TX",
-      addressCountry: "US",
-    },
+    telephone: "+12549401515",
+    address: { "@type": "PostalAddress", addressLocality: "Waco", addressRegion: "TX", addressCountry: "US" },
   },
   itemListElement: [
-    {
-      "@type": "Offer",
-      itemOffered: {
-        "@type": "Service",
-        name: "Website Design",
-        description:
-          "Mobile-first, SEO-optimized websites built on Next.js for Central Texas businesses. Fixed price, you own everything.",
-        url: `${BASE_URL}/services/website-design`,
-      },
-    },
-    {
-      "@type": "Offer",
-      itemOffered: {
-        "@type": "Service",
-        name: "Software Engineering",
-        description:
-          "Custom CRMs, client portals, business tools, and web applications. Fixed price, direct developer access.",
-        url: `${BASE_URL}/services/software-engineering`,
-      },
-    },
-    {
-      "@type": "Offer",
-      itemOffered: {
-        "@type": "Service",
-        name: "Graphic Design",
-        description:
-          "Custom logos, brand identities, and marketing collateral. Unlimited revisions, full source file ownership.",
-        url: `${BASE_URL}/services/graphic-design`,
-      },
-    },
-    {
-      "@type": "Offer",
-      itemOffered: {
-        "@type": "Service",
-        name: "Digital Marketing & Local SEO",
-        description:
-          "Local SEO, Google Ads, Google Business Profile management, and social media. Month-to-month, no contracts.",
-        url: `${BASE_URL}/services/marketing-solutions`,
-      },
-    },
-  ],
-};
-
-const breadcrumbSchema = {
-  "@context": "https://schema.org",
-  "@type": "BreadcrumbList",
-  itemListElement: [
-    { "@type": "ListItem", position: 1, name: "Home",     item: BASE_URL },
-    { "@type": "ListItem", position: 2, name: "Services", item: url },
+    { "@type": "Offer", itemOffered: { "@type": "Service", name: "Mobile Diagnostics", url: `${BASE_URL}/services/mobile-diagnostics` } },
+    { "@type": "Offer", itemOffered: { "@type": "Service", name: "Brake Service", url: `${BASE_URL}/services/brake-service` } },
+    { "@type": "Offer", itemOffered: { "@type": "Service", name: "Battery & Alternator", url: `${BASE_URL}/services/battery-alternator` } },
+    { "@type": "Offer", itemOffered: { "@type": "Service", name: "Mobile Oil Change", url: `${BASE_URL}/services/oil-change-mobile` } },
+    { "@type": "Offer", itemOffered: { "@type": "Service", name: "Starter Repair", url: `${BASE_URL}/services/starter-repair` } },
+    { "@type": "Offer", itemOffered: { "@type": "Service", name: "Pre-Purchase Inspection", url: `${BASE_URL}/services/pre-purchase-inspection` } },
   ],
 };
 
 export default function ServicesLayout({ children }: { children: React.ReactNode }) {
   return (
     <>
-      <script
-        type="application/ld+json"
-        dangerouslySetInnerHTML={{ __html: JSON.stringify(offerCatalogSchema) }}
-      />
-      <script
-        type="application/ld+json"
-        dangerouslySetInnerHTML={{ __html: JSON.stringify(breadcrumbSchema) }}
-      />
+      <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(offerCatalogSchema) }} />
       {children}
     </>
   );
