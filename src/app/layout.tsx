@@ -125,7 +125,7 @@ export const metadata: Metadata = {
     siteName: "BayCall Mobile Mechanics",
     images: [
       {
-        url: `${BASE_URL}/logos/scott-apps-banner.png?v=1`,
+        url: `${BASE_URL}/pages/home/welcome/hero-main.jpg`,
         width: 1200,
         height: 630,
         alt: "BayCall Mobile Mechanics — Waco TX Mobile Mechanic Service",
@@ -139,7 +139,7 @@ export const metadata: Metadata = {
     title: "BayCall Mobile Mechanics | Waco TX Mobile Mechanics",
     description:
       "Mobile diagnostics, brakes, batteries, oil changes & more for Central Texas. ASE-certified & insured — we come to you.",
-    images: [`${BASE_URL}/logos/scott-apps-banner.png?v=1`],
+    images: [`${BASE_URL}/pages/home/welcome/hero-main.jpg`],
   },
   robots: {
     index: true,

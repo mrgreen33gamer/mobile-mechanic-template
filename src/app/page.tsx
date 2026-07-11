@@ -63,14 +63,14 @@ export default function HomePage() {
       title: "Starter Repair",
       body: "Click-no-crank, slow starts, and starter replacement without a tow. ASE-certified techs diagnose electrical and mechanical no-start causes correctly the first time.",
       link: "/services/starter-repair",
-      image: "/pages/home/services/service-1.jpg",
+      image: "/pages/home/welcome/before.jpg",
     },
     {
       icon: faClipboardCheck,
       title: "Pre-Purchase Inspection",
       body: "Buying a used car in Central Texas? We inspect engines, brakes, leaks, and electronics at the seller's location so you know what you're signing up for.",
       link: "/services/pre-purchase-inspection",
-      image: "/pages/home/services/service-2.jpg",
+      image: "/pages/home/welcome/after.jpg",
     },
   ];
 
