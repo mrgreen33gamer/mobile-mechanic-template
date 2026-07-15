@@ -1,158 +1,27 @@
-// Mobile Mechanic Hero C — Interstate roads, van route polyline, ETA badge
+// Mobile Mechanic Hero — BayCall (photographic, on-site service)
+// Photographic parallax stage + an authentic mobile-mechanic card replaces the
+// abstract service-area SVG map. Real imagery, orange detailing, Bangers headline.
+// Photos live in /public/pages/home/welcome (sourced from Pexels, commercial-OK).
 'use client';
-import React from 'react';
-import { motion } from 'framer-motion';
+import React, { useRef } from 'react';
+import { motion, useReducedMotion, useScroll, useTransform } from 'framer-motion';
+import Image from 'next/image';
 import Link from 'next/link';
-import { PhoneIcon, ChevronIcon, CheckIcon, PinIcon } from './_shared/icons';
+import { PhoneIcon, ChevronIcon, CheckIcon } from './_shared/icons';
 import styles from './styles.module.scss';
 
-function ServiceAreaMap({
-  mapCenterLabel,
-  mapPins,
-  coverageLabel,
-}: {
-  mapCenterLabel: string;
-  mapPins: Array<{ label: string; x: number; y: number }>;
-  coverageLabel?: string;
-}) {
-  return (
-    <div
-      className={`${styles.mapCard} ${styles.highwayMap}`}
-      role="img"
-      aria-label={`Service area map centered on ${mapCenterLabel}`}
-    >
-      <svg
-        className={styles.mapSvg}
-        viewBox="0 0 400 320"
-        preserveAspectRatio="xMidYMid slice"
-        aria-hidden="true"
-      >
-        <defs>
-          <radialGradient id="mechGlow" cx="45%" cy="50%" r="55%">
-            <stop offset="0%" stopColor="rgba(249, 115, 22, 0.12)" />
-            <stop offset="100%" stopColor="rgba(0, 0, 0, 0)" />
-          </radialGradient>
-          <marker id="routeArrow" markerWidth="8" markerHeight="8" refX="6" refY="3" orient="auto">
-            <path d="M0,0 L6,3 L0,6 Z" fill="rgba(249, 115, 22, 0.9)" />
-          </marker>
-        </defs>
-
-        <rect width="400" height="320" fill="url(#mechGlow)" />
-
-        {/* Interstate-style multi-lane roads */}
-        <path
-          d="M -20 100 L 420 100"
-          fill="none"
-          stroke="rgba(255,255,255,0.12)"
-          strokeWidth="18"
-        />
-        <path
-          d="M -20 100 L 420 100"
-          fill="none"
-          stroke="rgba(255,255,255,0.22)"
-          strokeWidth="1.5"
-          strokeDasharray="14 10"
-        />
-        <path
-          d="M 80 -10 L 80 340"
-          fill="none"
-          stroke="rgba(255,255,255,0.1)"
-          strokeWidth="14"
-        />
-        <path
-          d="M 80 -10 L 80 340"
-          fill="none"
-          stroke="rgba(255,255,255,0.18)"
-          strokeWidth="1.25"
-          strokeDasharray="10 8"
-        />
-        <path
-          d="M -10 240 Q 160 200 280 250 T 420 220"
-          fill="none"
-          stroke="rgba(255,255,255,0.09)"
-          strokeWidth="12"
-        />
-        <path
-          d="M -10 240 Q 160 200 280 250 T 420 220"
-          fill="none"
-          stroke="rgba(255,255,255,0.16)"
-          strokeWidth="1.1"
-          strokeDasharray="9 7"
-        />
-
-        {/* Secondary arterials */}
-        <path d="M 200 0 L 200 320" fill="none" stroke="rgba(255,255,255,0.06)" strokeWidth="6" />
-        <path d="M 0 160 L 400 160" fill="none" stroke="rgba(255,255,255,0.05)" strokeWidth="5" />
-
-        {/* Active van route polyline */}
-        <polyline
-          points="80,280 80,200 140,160 200,160 260,120 320,100 360,100"
-          fill="none"
-          stroke="rgba(249, 115, 22, 0.85)"
-          strokeWidth="3"
-          strokeLinecap="round"
-          strokeLinejoin="round"
-          markerEnd="url(#routeArrow)"
-          className={styles.routeLine}
-        />
-        {/* Route waypoints */}
-        <circle cx="80" cy="280" r="5" fill="rgba(249,115,22,0.95)" stroke="rgba(255,255,255,0.5)" strokeWidth="1.5" />
-        <circle cx="200" cy="160" r="4" fill="rgba(249,115,22,0.7)" stroke="rgba(255,255,255,0.4)" strokeWidth="1" />
-        <circle cx="320" cy="100" r="4.5" fill="rgba(249,115,22,0.9)" stroke="rgba(255,255,255,0.45)" strokeWidth="1.25" />
-
-        {/* Highway shield markers */}
-        <g className={styles.shieldGroup}>
-          <path d="M48 88 L72 88 L76 100 L72 118 L48 118 L44 100 Z" fill="rgba(15,15,20,0.85)" stroke="rgba(255,255,255,0.35)" strokeWidth="1.2" />
-          <text x="60" y="107" textAnchor="middle" fill="rgba(255,255,255,0.85)" fontSize="10" fontWeight="700" fontFamily="system-ui,sans-serif">
-            35
-          </text>
-          <path d="M188 72 L212 72 L216 84 L212 102 L188 102 L184 84 Z" fill="rgba(15,15,20,0.85)" stroke="rgba(249,115,22,0.45)" strokeWidth="1.2" />
-          <text x="200" y="91" textAnchor="middle" fill="rgba(249,115,22,0.95)" fontSize="10" fontWeight="700" fontFamily="system-ui,sans-serif">
-            6
-          </text>
-        </g>
-      </svg>
-
-      <div className={`${styles.rings} ${styles.routeRings}`} aria-hidden="true">
-        <span className={`${styles.ring} ${styles.ring1}`} />
-        <span className={`${styles.ring} ${styles.ring2}`} />
-      </div>
-
-      <div className={styles.centerPin}>
-        <div className={`${styles.centerPinIcon} ${styles.vanHub}`}>
-          <PinIcon size={20} />
-        </div>
-        <span className={styles.centerLabel}>{mapCenterLabel}</span>
-      </div>
-
-      {/* ETA badge */}
-      <div className={styles.etaBadge} aria-hidden="true">
-        <span className={styles.etaLive} />
-        ETA 42 min
-      </div>
-
-      {mapPins.map((pin) => (
-        <div
-          key={`${pin.label}-${pin.x}-${pin.y}`}
-          className={styles.satPin}
-          style={{ left: `${pin.x}%`, top: `${pin.y}%` }}
-        >
-          <span className={styles.satDot} />
-          <span className={styles.satLabel}>{pin.label}</span>
-        </div>
-      ))}
-
-      {coverageLabel && (
-        <div className={styles.coverageBadge}>
-          <span className={styles.coverageDot} />
-          {coverageLabel}
-        </div>
-      )}
-    </div>
-  );
-}
-
 export default function WelcomePage() {
+  const reduceMotion = useReducedMotion();
+  const heroRef = useRef<HTMLElement>(null);
+
+  // Scroll-linked parallax on the background photo. Disabled under reduced-motion.
+  const { scrollYProgress } = useScroll({
+    target: heroRef,
+    offset: ['start start', 'end start'],
+  });
+  const bgY = useTransform(scrollYProgress, [0, 1], ['0%', reduceMotion ? '0%' : '16%']);
+  const bgScale = useTransform(scrollYProgress, [0, 1], [1.08, reduceMotion ? 1.08 : 1.16]);
+
   const badgeText = "Waco's Most Trusted Mobile Mechanics — Since 2013";
   const headlineLines = ['We Come to You.', 'Fixed Right.'];
   const headlineAccent = 'BayCall Mobile Mechanics.';
@@ -167,17 +36,26 @@ export default function WelcomePage() {
     '15+ Yrs Local',
     '12-Month Parts Warranty',
   ];
-  const mapCenterLabel = 'Service HQ';
-  const mapPins = [
-    { label: 'Waco', x: 42, y: 48 },
-    { label: 'Temple', x: 68, y: 62 },
-    { label: 'Killeen', x: 58, y: 72 },
-  ];
-  const coverageLabel = 'Central Texas coverage';
 
   return (
-    <section className={styles.hero} aria-label="Hero">
-      <div className={styles.shard} aria-hidden="true" />
+    <section ref={heroRef} className={styles.hero} aria-label="Hero">
+      {/* Photographic parallax background — real on-site mobile repair scene */}
+      <motion.div
+        className={styles.bgLayer}
+        style={{ y: bgY, scale: bgScale }}
+        aria-hidden="true"
+      >
+        <Image
+          src="/pages/home/welcome/hero-scene.jpg"
+          alt=""
+          fill
+          priority
+          sizes="100vw"
+          className={styles.bgImage}
+        />
+      </motion.div>
+      {/* Obsidian + orange scrim keeps the headline legible and on-brand */}
+      <div className={styles.scrim} aria-hidden="true" />
 
       <div className={styles.layout}>
         <div className={styles.content}>
@@ -243,17 +121,38 @@ export default function WelcomePage() {
           </motion.div>
         </div>
 
+        {/* Authentic mobile-mechanic photo — the ownable image, framed as a spec card */}
         <motion.div
           className={styles.visual}
           initial={{ opacity: 0, x: 30 }}
           animate={{ opacity: 1, x: 0 }}
           transition={{ duration: 0.7, delay: 0.28, ease: 'easeOut' }}
         >
-          <ServiceAreaMap
-            mapCenterLabel={mapCenterLabel}
-            mapPins={mapPins}
-            coverageLabel={coverageLabel}
-          />
+          <div className={styles.photoCard}>
+            <Image
+              src="/pages/home/welcome/hero-tech.jpg"
+              alt="ASE-certified mobile mechanic inspecting a car's engine and battery on-site in Central Texas"
+              fill
+              priority
+              sizes="(max-width: 960px) 88vw, 520px"
+              className={styles.photo}
+            />
+            <div className={styles.photoGlaze} aria-hidden="true" />
+
+            <div className={styles.photoBadge}>
+              <span className={styles.photoBadgeDot} />
+              ASE-Certified Tech · On-Site
+            </div>
+
+            <div className={styles.specCard}>
+              <span className={styles.specRow}>
+                <CheckIcon size={10} /> Same-day mobile service
+              </span>
+              <span className={styles.specRow}>
+                <CheckIcon size={10} /> 12-month parts warranty
+              </span>
+            </div>
+          </div>
         </motion.div>
       </div>
     </section>
