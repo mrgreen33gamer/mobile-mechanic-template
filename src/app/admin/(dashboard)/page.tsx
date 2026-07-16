@@ -16,7 +16,7 @@ const RANGE_LABEL: Record<Range, string> = {
 };
 
 const STATUS_COLOR: Record<string, string> = {
-  new: '#f97316',
+  new: '#b91c1c',
   contacted: '#378add',
   qualified: '#d97706',
   converted: '#0d9488',
@@ -261,7 +261,7 @@ export default function AdminOverviewPage() {
             <div className={styles.statusList}>
               {data.statusBreakdown.map(item => {
                 const pct = Math.round((item.count / statusTotal) * 100);
-                const color = STATUS_COLOR[item.status] ?? '#f97316';
+                const color = STATUS_COLOR[item.status] ?? '#b91c1c';
                 return (
                   <div key={item.status}>
                     <div className={styles.statusRowMeta}>

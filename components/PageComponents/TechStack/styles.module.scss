@@ -69,14 +69,14 @@
 
   &:hover {
     border-color: rgba($orange, 0.22);
-    background: rgba(249, 115, 22, 0.06);
+    background: rgba(249, 22, 24, 0.06);
     transform: translateY(-2px);
   }
 }
 
 .itemCert {
-  border-color: rgba(249, 115, 22, 0.25);
-  background: rgba(249, 115, 22, 0.06);
+  border-color: rgba(249, 22, 24, 0.25);
+  background: rgba(249, 22, 24, 0.06);
 }
 
 .itemDot {
@@ -86,8 +86,8 @@
 
 .certCheck {
   width: 20px; height: 20px; border-radius: 50%;
-  background: rgba(249, 115, 22, 0.15);
-  border: 1px solid rgba(249, 115, 22, 0.3);
+  background: rgba(249, 22, 24, 0.15);
+  border: 1px solid rgba(249, 22, 24, 0.3);
   display: flex; align-items: center; justify-content: center;
   color: $orange; flex-shrink: 0;
 }

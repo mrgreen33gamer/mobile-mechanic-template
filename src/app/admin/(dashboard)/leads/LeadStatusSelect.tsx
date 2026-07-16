@@ -7,7 +7,7 @@ const STATUSES = ['new', 'contacted', 'qualified', 'converted', 'lost'] as const
 type Status = typeof STATUSES[number];
 
 const STATUS_COLORS: Record<Status, string> = {
-  new:       '#f97316',
+  new:       '#b91c1c',
   contacted: '#378add',
   qualified: '#d97706',
   converted: '#0d9488',

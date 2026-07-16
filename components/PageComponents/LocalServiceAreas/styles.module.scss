@@ -66,14 +66,14 @@
 
   &:hover {
     border-color: rgba($orange, 0.22);
-    background: rgba(249, 115, 22, 0.04);
+    background: rgba(249, 22, 24, 0.04);
     transform: translateY(-4px);
   }
 }
 
 .cardHub {
-  border-color: rgba(249, 115, 22, 0.3);
-  background: rgba(249, 115, 22, 0.06);
+  border-color: rgba(249, 22, 24, 0.3);
+  background: rgba(249, 22, 24, 0.06);
 
   &::before {
     content: '';
@@ -96,9 +96,9 @@
 }
 
 .badgeNearby {
-  background: rgba(249, 115, 22, 0.12);
+  background: rgba(249, 22, 24, 0.12);
   color: $orange;
-  border: 1px solid rgba(249, 115, 22, 0.25);
+  border: 1px solid rgba(249, 22, 24, 0.25);
 }
 
 .pinWrap {

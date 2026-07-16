@@ -55,16 +55,16 @@
   &:hover {
     border-color: rgba($orange, 0.22);
     transform: translateY(-4px);
-    background: rgba(249, 115, 22, 0.04);
+    background: rgba(249, 22, 24, 0.04);
 
-    .cardIcon { background: rgba(249, 115, 22, 0.18); }
+    .cardIcon { background: rgba(249, 22, 24, 0.18); }
   }
 }
 
 .cardIcon {
   flex-shrink: 0; width: 50px; height: 50px;
-  background: rgba(249, 115, 22, 0.1);
-  border: 1px solid rgba(249, 115, 22, 0.2);
+  background: rgba(249, 22, 24, 0.1);
+  border: 1px solid rgba(249, 22, 24, 0.2);
   border-radius: 14px;
   display: flex; align-items: center; justify-content: center;
   color: $orange;
